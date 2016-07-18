@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!--jQuery-->
+    <script type="text/javascript" src="http://nms.tongbu.com/static/res/jquery/1.12.0/jquery-1.12.0.min.js"></script>
+
+    <!--vuejs-->
+    <script type="text/javascript" src="vue.min.js"></script>
+
+    <!--appjs-->
+    <script type="text/javascript" src="app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-md-6 col-md-offset-3">
+            <h1>Vue demo</h1>
+            <div id="app">
+                <div>{{*message}}</div>
+                <input type="text" v-model="message">
+                <br>
+                {{message + 'vue is awesome'}}<br>
+                {{ message.split('').reverse().join('') }}
+                <br>
+                <select v-model="selected" multiple>
+                  <option selected>A</option>
+                  <option>B</option>
+                  <option>C</option>
+                </select>
+                <br>
+                <span>Selected: {{ selected | json }}</span>
+                <br>
+                <tr v-for="book in books">
+                   <td>{{book.id}}</td>
+                   <td>{{book.name}}</td>
+                   <td>{{book.author}}</td>
+                   <td>{{book.price}}</td>
+                </tr>
+                <br>
+                <button v-on:click="doSomething">doSomething</button>
+
+            </div>
+                        
+        </div>
+    </div>
+</body>
+
+</html>
