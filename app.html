@@ -33,19 +33,10 @@
                   <option>C</option>
                 </select>
                 <br>
-                <span>Selected: {{ selected | json }}</span>
-                <br>
-                <tr v-for="book in books">
-                   <td>{{book.id}}</td>
-                   <td>{{book.name}}</td>
-                   <td>{{book.author}}</td>
-                   <td>{{book.price}}</td>
-                </tr>
+                <span>Selected: {{ selected | json }}</span>           
                 <br>
                 <button v-on:click="doSomething">doSomething</button>
-
-            </div>
-                        
+            </div>                        
         </div>
     </div>
 </body>
