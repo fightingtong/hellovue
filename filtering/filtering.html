@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!--jQuery-->
+    <script type="text/javascript" src="http://nms.tongbu.com/static/res/jquery/1.12.0/jquery-1.12.0.min.js"></script>
+
+    <!--vuejs-->
+    <script type="text/javascript" src="../vue.min.js"></script>
+
+    <!--filteringjs-->
+    <script type="text/javascript" src="filtering.js"></script>
+</head>
+
+<body>
+    <div id="myvueinstance" class="container">
+        <div class="row">UI List Element</div>
+        <input type="text" class="form-control" v-model="filterkey">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th><a href="#" v-on:click="sortvia('id')">id</a></th>
+                    <th><a href="#" v-on:click="sortvia('framework')">framework</a></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr v-for="framework in frameworks | filterBy filterkey | orderBy sortparam order">
+                    <td>{{ framework.id }}</td>
+                    <td>{{ framework.framework }}</td>
+                </tr>
+            </tbody>
+        </table>      
+    </div>
+</body>
+
+</html>
