@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+    <!--jQuery-->
+    <script type="text/javascript" src="http://nms.tongbu.com/static/res/jquery/1.12.0/jquery-1.12.0.min.js"></script>
+
+    <!--vuejs-->
+    <script type="text/javascript" src="../vue.min.js"></script>
+
+    <!--displayingListjs-->
+    <script type="text/javascript" src="displayingList.js"></script>
+</head>
+
+<body>
+    <div id="myvueinstance" class="container">
+        <div class="row">UI List Element</div>
+        
+        <ul class="nav nav-pills">
+            <li v-for="library in libraries" class="active"><a href="#">{{ library }}</a></li>            
+        </ul>
+
+        <p></p>
+
+        <input type="text" class="form-control" placeholder="Type the library name here, then click the button below." v-model="newlibrary">
+        <button class="btn btn-info" v-on:click="addLibrary">Click to add library</button>
+        <button class="btn btn-danger" v-on:click="deleteLibraries">Click to delete all libraries</button>
+
+        <p></p>
+
+        <div class="row">Vue Instance data object</div>
+        {{ $data | json }}
+    </div>
+</body>
+
+</html>
